@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\playerMovement.cs" />
     <Compile Include="Assets\Scripts\intro script.cs" />
+    <Compile Include="Assets\Scripts\PlayerFeet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
