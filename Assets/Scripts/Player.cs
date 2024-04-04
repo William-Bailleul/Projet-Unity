@@ -11,13 +11,14 @@ public class introscript : MonoBehaviour
 
     //Jump Parameter
     private bool _isJumping;
-    private float minTimeJump = 0.2f;
     private float maxTimeJump = 0.2f;
     private float currentJumptime = 0;
 
     public float _horizontal;
     public float _jumpForce;
     public float _gravityScale;
+
+    public int _currentColorState;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,15 @@ public class introscript : MonoBehaviour
             currentVelocity.x -= _horizontal;
 
         _rb2d.velocity = currentVelocity;
+
+        if (Input.GetKeyDown(KeyCode.A) && _feet._isGrounded == true)
+        {
+            _currentColorState++;
+        }
+        if (Input.GetKeyDown(KeyCode.E) && _feet._isGrounded == true)
+        {
+            _currentColorState--;
+        }
 
         //if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded)
         //    _rb2d.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
