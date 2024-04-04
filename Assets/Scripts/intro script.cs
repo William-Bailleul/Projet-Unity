@@ -40,9 +40,6 @@ public class introscript : MonoBehaviour
 
         _rb2d.velocity = currentVelocity;
 
-        //if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded)
-        //    _rb2d.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
-
         //Jump event
         if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded == true)
         {
@@ -55,7 +52,6 @@ public class introscript : MonoBehaviour
 
             if (currentJumptime < maxTimeJump)
             {
-               //print("jumping");
                 onJumpEvent();
             }
         }
@@ -81,6 +77,5 @@ public class introscript : MonoBehaviour
         _feet._isGrounded = false;
         _isJumping = true;
         _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
-        //_rb2d.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
     }
 }
