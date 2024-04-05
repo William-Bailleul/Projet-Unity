@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class introscript : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Rigidbody2D _rb2d;
     public PlayerFeet _feet;
@@ -40,18 +40,6 @@ public class introscript : MonoBehaviour
             currentVelocity.x -= _horizontal;
 
         _rb2d.velocity = currentVelocity;
-
-        if (Input.GetKeyDown(KeyCode.A) && _feet._isGrounded == true)
-        {
-            _currentColorState++;
-        }
-        if (Input.GetKeyDown(KeyCode.E) && _feet._isGrounded == true)
-        {
-            _currentColorState--;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded)
-        //    _rb2d.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
 
         //Jump event
         if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded == true)
@@ -91,6 +79,5 @@ public class introscript : MonoBehaviour
         _feet._isGrounded = false;
         _isJumping = true;
         _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
-        //_rb2d.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
     }
 }
