@@ -13,12 +13,11 @@ public class Player : MonoBehaviour
     private bool _isJumping;
     private float maxTimeJump = 0.2f;
     private float currentJumptime = 0;
-
+    public bool _isFrozen;
     public float _horizontal;
     public float _jumpForce;
     public float _gravityScale;
 
-    public int _currentColorState;
 
     // Start is called before the first frame update
     void Start()
@@ -31,42 +30,48 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(_feet._isGrounded);
+        //print(_feet._isGrounded);
         Vector2 currentVelocity = new Vector2(0, _rb2d.velocity.y);
-
-        if (Input.GetKey(KeyCode.D))
-            currentVelocity.x += _horizontal;
-        if (Input.GetKey(KeyCode.A))
-            currentVelocity.x -= _horizontal;
-
-        _rb2d.velocity = currentVelocity;
-
-        //Jump event
-        if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded == true)
+        if (!_isFrozen)
         {
-            onJumpEvent();
+            if (Input.GetKey(KeyCode.D))
+                currentVelocity.x += _horizontal;
+            if (Input.GetKey(KeyCode.A))
+                currentVelocity.x -= _horizontal;
         }
-        //Jump continuously while holding till limit
-        if (Input.GetKey(KeyCode.Space) && _isJumping == true)
-        {
-            currentJumptime += Time.deltaTime;
 
-            if (currentJumptime < maxTimeJump)
+
+            _rb2d.velocity = currentVelocity;
+        if (!_isFrozen)
+        {
+            //Jump event
+            if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded == true)
             {
-               //print("jumping");
                 onJumpEvent();
             }
-        }
-        else
-        {
-            _isJumping = false;
-        }
+            //Jump continuously while holding till limit
+            if (Input.GetKey(KeyCode.Space) && _isJumping == true)
+            {
+                currentJumptime += Time.deltaTime;
 
-        if (_feet._isGrounded == true)
-        {
-            currentJumptime = 0;
-            _isJumping = false;
+                if (currentJumptime < maxTimeJump)
+                {
+                    //print("jumping");
+                    onJumpEvent();
+                }
+            }
+            else
+            {
+                _isJumping = false;
+            }
+
+            if (_feet._isGrounded == true)
+            {
+                currentJumptime = 0;
+                _isJumping = false;
+            }
         }
+        
     }
 
     private void FixedUpdate()
