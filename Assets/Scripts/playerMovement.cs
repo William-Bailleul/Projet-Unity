@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -32,20 +28,23 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(_feet._isGrounded);
         Vector2 currentVelocity = new Vector2(0, _rb2d.velocity.y);
 
         if (Input.GetKey(KeyCode.D))
         {
-            _animator.SetTrigger("Walking");
+            _animator.SetFloat("Speed", 0.5f);
             currentVelocity.x += _horizontal;
             gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
-            _animator.SetTrigger("Walking");
+            _animator.SetFloat("Speed", 0.5f);
             currentVelocity.x -= _horizontal;
             gameObject.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+        else
+        {
+            _animator.SetFloat("Speed", 0);
         }
 
         _rb2d.velocity = currentVelocity;
@@ -75,8 +74,6 @@ public class playerMovement : MonoBehaviour
             _currentJumptime = 0;
             _isJumping = false;
         }
-
-        _animator.SetTrigger("Idle");
     }
 
     private void onJumpEvent()

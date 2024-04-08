@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Dissolve : MonoBehaviour
@@ -17,7 +16,7 @@ public class Dissolve : MonoBehaviour
     void Start()
     {
         isVanished = false;
-        _spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         _materials = new Material[_spriteRenderers.Length];
         for (int i = 0; i < _spriteRenderers.Length; i++)
         {

@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\Dissolve.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
+    <Compile Include="Assets\Scripts\Damage.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerFeet.cs" />
   </ItemGroup>
   <ItemGroup>
