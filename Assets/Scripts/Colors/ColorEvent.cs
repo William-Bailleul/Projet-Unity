@@ -44,12 +44,14 @@ public class ColorEvent : MonoBehaviour
 
     private void Activate()
     {
+        _active = true;
         _collider.enabled = true;
         _sprite.enabled = true;
     }
 
     private void Deactivate()
     {
+        _active = false;
         _collider.enabled = false;
         _sprite.enabled = false;
     }

@@ -6,24 +6,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D _rb2d;
+    [SerializeField] private ScriptableStats _stats;
+    public Rigidbody2D _rb;
     public PlayerFeet _feet;
 
     //Jump Parameter
+    public float timeLeftGrounded;
+    private float _timeLeftGrounded = float.MinValue;
+
     private bool _isJumping;
-    private float maxTimeJump = 0.2f;
-    private float currentJumptime = 0;
     public bool _isFrozen;
-    public float _horizontal;
-    public float _jumpForce;
-    public float _gravityScale;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
-        _rb2d.freezeRotation = true;
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.freezeRotation = true;
         _isJumping = false;
     }
 
@@ -31,30 +31,33 @@ public class Player : MonoBehaviour
     void Update()
     {
         //print(_feet._isGrounded);
-        Vector2 currentVelocity = new Vector2(0, _rb2d.velocity.y);
+        Vector2 currentVelocity = new Vector2(0, _rb.velocity.y);
         if (!_isFrozen)
         {
             if (Input.GetKey(KeyCode.D))
-                currentVelocity.x += _horizontal;
+                currentVelocity.x += _stats.horizontal;
             if (Input.GetKey(KeyCode.A))
-                currentVelocity.x -= _horizontal;
+                currentVelocity.x -= _stats.horizontal;
         }
+        _rb.velocity = currentVelocity;
 
-
-            _rb2d.velocity = currentVelocity;
         if (!_isFrozen)
         {
             //Jump event
-            if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded == true)
+            if (Input.GetKeyDown(KeyCode.Space) && _feet._isGrounded)
+            {
+                onJumpEvent();
+            }
+            if (Input.GetKeyDown(KeyCode.Space) && !_feet._isGrounded && _timeLeftGrounded + _stats.coyoteTime > Time.time)
             {
                 onJumpEvent();
             }
             //Jump continuously while holding till limit
-            if (Input.GetKey(KeyCode.Space) && _isJumping == true)
+            if (Input.GetKey(KeyCode.Space) && _isJumping)
             {
-                currentJumptime += Time.deltaTime;
+                _stats.currentJumpTime += Time.deltaTime;
 
-                if (currentJumptime < maxTimeJump)
+                if (_stats.currentJumpTime < _stats.maxTimeJump)
                 {
                     //print("jumping");
                     onJumpEvent();
@@ -67,7 +70,7 @@ public class Player : MonoBehaviour
 
             if (_feet._isGrounded == true)
             {
-                currentJumptime = 0;
+                _stats.currentJumpTime = 0;
                 _isJumping = false;
             }
         }
@@ -83,6 +86,6 @@ public class Player : MonoBehaviour
     {
         _feet._isGrounded = false;
         _isJumping = true;
-        _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
+        _rb.velocity = new Vector2(_rb.velocity.x, _stats.jumpForce);
     }
 }

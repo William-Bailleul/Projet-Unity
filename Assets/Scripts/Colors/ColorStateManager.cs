@@ -19,7 +19,7 @@ public class ColorManager : MonoBehaviour
     {
         _canChange = true;
         ActiveColor = Colors.None;
-        _colorOwned = 3;
+        _colorOwned = 1;
     }
 
     void Update()
@@ -28,15 +28,16 @@ public class ColorManager : MonoBehaviour
         {
             if (!_canChange) return;
             Debug.Log($"{ActiveColor}");
-            ActiveColor++;
-            ActiveColor = (Colors)((int)ActiveColor % (_colorOwned) + 1);
+            ActiveColor = (Colors)((int)ActiveColor % (_colorOwned)+1);
             Debug.Log($"{ActiveColor}");
             StartCoroutine(ColorChanging());
-            if (Input.GetKeyDown(KeyCode.A)) {
-                _colorOwned++;
-                if (_colorOwned >= 3)
-                    _colorOwned = Enum.GetValues(typeof(Colors)).Length-1;
-            }
+            SwitchState();
+        }
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            _colorOwned++;
+            if (_colorOwned > 3)
+                _colorOwned = Enum.GetValues(typeof(Colors)).Length-1;
+            Debug.Log(_colorOwned);
         }
 
     }
@@ -59,7 +60,7 @@ public class ColorManager : MonoBehaviour
     {
         _canChange = false;
         _player._isFrozen = true;
-        _player._rb2d.velocity.Set(0f, 0f);
+        _player._rb.velocity.Set(0f, 0f);
         yield return new WaitForSeconds(0.5f);
         _player._isFrozen = false;
         _canChange = true;
