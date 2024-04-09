@@ -1012,7 +1012,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 3054ced0948443748bfa6d0a3c2b7256, type: 2}
   _rb: {fileID: 0}
   _feet: {fileID: 1664320419}
-  timeLeftGrounded: 0
+  _jumpForce: 25
   _isFrozen: 0
 --- !u!61 &1258384907
 BoxCollider2D:
