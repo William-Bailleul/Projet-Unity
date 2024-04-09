@@ -8,6 +8,7 @@ public class introscript : MonoBehaviour
 {
     public Rigidbody2D _rb2d;
     public PlayerFeet _feet;
+    public Transform myTransform;
 
     //Jump Parameter
     private bool _isJumping;
@@ -20,9 +21,12 @@ public class introscript : MonoBehaviour
 
     public int _currentColorState;
 
+    public bool isLookingRight = true;
+
     // Start is called before the first frame update
     void Start()
     {
+        myTransform = transform;
         _rb2d = GetComponent<Rigidbody2D>();
         _rb2d.freezeRotation = true;
         _isJumping = false;
@@ -31,14 +35,20 @@ public class introscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(_feet._isGrounded);
+        
         Vector2 currentVelocity = new Vector2(0, _rb2d.velocity.y);
 
         if (Input.GetKey(KeyCode.D))
+        {
             currentVelocity.x += _horizontal;
+            isLookingRight = true;
+        }
         if (Input.GetKey(KeyCode.A))
+        {
             currentVelocity.x -= _horizontal;
-
+            isLookingRight = false;
+        }
+        
         _rb2d.velocity = currentVelocity;
 
         if (Input.GetKeyDown(KeyCode.A) && _feet._isGrounded == true)
@@ -65,7 +75,7 @@ public class introscript : MonoBehaviour
 
             if (currentJumptime < maxTimeJump)
             {
-               //print("jumping");
+               
                 onJumpEvent();
             }
         }
