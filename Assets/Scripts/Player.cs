@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public static float _JumpBuffer = .2f;
     private float _bufferTimeCounter;
 
+    public Animator GetAnimator {  get => _animator; }
+
     private void Start()
     {
         Damage.instance.Animator = _animator;
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
         _rb2d.freezeRotation = true;
         _isJumping = false;
         _isLookingRight = true;
+        Utils.UtilsRigidBody2D = _rb2d;
     }
 
     void Update()
@@ -92,11 +95,11 @@ public class Player : MonoBehaviour
 
         if (_isLookingRight == true)
         {
-            Flip(0f);
+            Utils.Flip2D_Object(gameObject);
         }
         else
         {
-            Flip(180f);
+            Utils.Flip2D_Object(gameObject, 0f, 180f);
         }
     }
 
@@ -115,10 +118,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Flip(float rotation)
-    {
-        _rb2d.transform.localRotation = Quaternion.Euler(0f, rotation, 0f);
-    }
+    //public void Flip(float rotation)
+    //{
+    //    _rb2d.transform.localRotation = Quaternion.Euler(0f, rotation, 0f);
+    //}
 
     private void onJumpEvent()
     {

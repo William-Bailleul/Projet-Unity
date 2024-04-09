@@ -31,10 +31,10 @@ public class ColorManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && _feet._isGrounded)
         {
             if (!_canChange) return;
-            Debug.Log($"{ActiveColor}");
+            //Debug.Log($"{ActiveColor}");
             PreviousColor = ActiveColor;
             ActiveColor = (Colors)((int)ActiveColor % (_colorOwned) + 1);
-            Debug.Log($"{ActiveColor}");
+            //Debug.Log($"{ActiveColor}");
             StartCoroutine(ColorChanging());
             SwitchState();
         }
@@ -43,7 +43,7 @@ public class ColorManager : MonoBehaviour
             _colorOwned++;
             if (_colorOwned > 3)
                 _colorOwned = Enum.GetValues(typeof(Colors)).Length - 1;
-            Debug.Log(_colorOwned);
+            //Debug.Log(_colorOwned);
         }
 
     }

@@ -82,11 +82,11 @@ public class playerMovement : MonoBehaviour
 
         if (isLookingRight == true)
         {
-            player.Flip(0f);
+            //player.Flip(0f);
         }
         else
         {
-            player.Flip(180f);
+            //player.Flip(180f);
         }
     }
 
