@@ -178,6 +178,8 @@ GameObject:
   - component: {fileID: 526436540}
   - component: {fileID: 526436539}
   - component: {fileID: 526436541}
+  - component: {fileID: 526436542}
+  - component: {fileID: 526436543}
   m_Layer: 0
   m_Name: red
   m_TagString: Ground
@@ -297,6 +299,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &526436542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526436538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aed070ba030bc4ab28190a458cf42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 1
+--- !u!114 &526436543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526436538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef05453adcdfbda46845e8cbbbe20655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dissolveTime: 0.75
 --- !u!1 &631174257
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +336,8 @@ GameObject:
   - component: {fileID: 631174259}
   - component: {fileID: 631174258}
   - component: {fileID: 631174260}
+  - component: {fileID: 631174261}
+  - component: {fileID: 631174262}
   m_Layer: 0
   m_Name: blue
   m_TagString: Ground
@@ -427,6 +457,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &631174261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631174257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aed070ba030bc4ab28190a458cf42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 2
+--- !u!114 &631174262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631174257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef05453adcdfbda46845e8cbbbe20655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dissolveTime: 0.75
 --- !u!1 &733265963
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +644,6 @@ GameObject:
   m_Component:
   - component: {fileID: 801426881}
   - component: {fileID: 801426880}
-  - component: {fileID: 801426879}
   - component: {fileID: 801426882}
   - component: {fileID: 801426883}
   m_Layer: 6
@@ -598,18 +653,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &801426879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801426878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2634a0d73d55ea4187b98dcfebe0b8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &801426880
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -751,6 +794,7 @@ GameObject:
   - component: {fileID: 1258384907}
   - component: {fileID: 1258384908}
   - component: {fileID: 1258384909}
+  - component: {fileID: 1258384910}
   - component: {fileID: 1258384911}
   m_Layer: 3
   m_Name: Player
@@ -929,15 +973,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1258384901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c208d98017ecef4788c39a9a1beff0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 620d5b045af176841a1780606ba918f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rb2d: {fileID: 1258384904}
+  _hp: 10
+  _animator: {fileID: 1258384908}
   _feet: {fileID: 1664320419}
   _horizontal: 10
-  _jumpForce: 20
-  _gravityScale: 15
-  _animator: {fileID: 1258384908}
+  _jumpForce: 35
+  _isFrozen: 0
+  _isLookingRight: 0
+--- !u!114 &1258384910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258384901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b45c26aa11700d438cc0f648f6038f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorOwned: 0
+  _feet: {fileID: 1664320419}
+  _player: {fileID: 1258384909}
 --- !u!114 &1258384911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,11 +1008,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1258384901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 620d5b045af176841a1780606ba918f0, type: 3}
+  m_Script: {fileID: 11500000, guid: ef05453adcdfbda46845e8cbbbe20655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 10
-  _animator: {fileID: 1258384908}
+  _dissolveTime: 0.75
 --- !u!1 &1548455327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1244,8 @@ GameObject:
   - component: {fileID: 1739110831}
   - component: {fileID: 1739110830}
   - component: {fileID: 1739110832}
+  - component: {fileID: 1739110833}
+  - component: {fileID: 1739110834}
   m_Layer: 0
   m_Name: yellow
   m_TagString: Ground
@@ -1303,6 +1365,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1739110833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739110829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aed070ba030bc4ab28190a458cf42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 3
+--- !u!114 &1739110834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739110829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef05453adcdfbda46845e8cbbbe20655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dissolveTime: 0.75
 --- !u!1 &1939820056
 GameObject:
   m_ObjectHideFlags: 0

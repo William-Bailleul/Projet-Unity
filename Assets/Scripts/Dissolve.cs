@@ -1,79 +1,103 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
     [SerializeField] private float _dissolveTime = 0.75f;
-
-    public GameObject _gameObject;
-
-    private SpriteRenderer[] _spriteRenderers;
-    private Material[] _materials;
-    private bool isVanished;
-
     private int _dissolveAmount = Shader.PropertyToID("_DissolveAmount");
 
-    void Start()
+    private bool isVanished;
+
+    private MaterialPropertyBlock _propertyBlock;
+
+    private void Start()
     {
-        isVanished = false;
-        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        _materials = new Material[_spriteRenderers.Length];
-        for (int i = 0; i < _spriteRenderers.Length; i++)
-        {
-            _materials[i] = _spriteRenderers[i].material;
-        }
+        ColorManager.OnChangeColor += OnColorChange;
+        _propertyBlock = new MaterialPropertyBlock();
     }
 
-    void Update()
+    public void OnColorChange(ColorManager.Colors newColor)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+
+        if (this != null && gameObject != null && gameObject.activeSelf)
         {
-            if(isVanished == false)
+            if (isVanished)
             {
-                StartCoroutine(Vanish());
-                isVanished = true;
+                StartCoroutine(Appear());
             }
             else
             {
-                StartCoroutine(Appear());
-                isVanished = false;
-            } 
+                StartCoroutine(Vanish());
+            }
         }
+
     }
 
-    private IEnumerator Vanish()
+
+    public IEnumerator Vanish()
     {
+        isVanished = true;
         float elapsedTime = 0f;
         while (elapsedTime < _dissolveTime)
         {
             elapsedTime += Time.deltaTime;
 
             float lerpDissolve = Mathf.Lerp(0, 1.1f, (elapsedTime / _dissolveTime));
-
-            for (int i = 0; i < _materials.Length; i++)
-            {
-                _materials[i].SetFloat(_dissolveAmount, lerpDissolve);
-            }
+            SetDissolveAmount(lerpDissolve, ColorManager.GetPreviousColor());
 
             yield return null;
         }
     }
 
-    private IEnumerator Appear()
+    public IEnumerator Appear()
     {
+        isVanished = false;
         float elapsedTime = 0f;
         while (elapsedTime < _dissolveTime)
         {
             elapsedTime += Time.deltaTime;
 
             float lerpDissolve = Mathf.Lerp(1.1f, 0f, (elapsedTime / _dissolveTime));
-
-            for (int i = 0; i < _materials.Length; i++)
-            {
-                _materials[i].SetFloat(_dissolveAmount, lerpDissolve);
-            }
+            SetDissolveAmount(lerpDissolve, ColorManager.GetActiveColor());
 
             yield return null;
         }
+    }
+
+    public void SetDissolveAmount(float amount, ColorManager.Colors color)
+    {
+        GameObject[] objectsToDissolve = GetObjectsWithColor(color);
+        foreach (GameObject obj in objectsToDissolve)
+        {
+            SpriteRenderer[] renderers = obj.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer renderer in renderers)
+            {
+                renderer.material.SetFloat(_dissolveAmount, amount);
+            }
+        }
+    }
+
+
+    private GameObject[] GetObjectsWithColor(ColorManager.Colors color)
+    {
+        ColorEvent[] colorEvents = FindObjectsOfType<ColorEvent>();
+
+        // Filtrer les objets par couleur
+        List<GameObject> objectsWithColor = new List<GameObject>();
+        foreach (ColorEvent colorEvent in colorEvents)
+        {
+            if (colorEvent.Color == color && colorEvent.gameObject.activeSelf)
+            {
+                objectsWithColor.Add(colorEvent.gameObject);
+            }
+        }
+
+        return objectsWithColor.ToArray();
+    }
+
+    public bool IsDestroyed()
+    {
+        return this == null;
     }
 }
