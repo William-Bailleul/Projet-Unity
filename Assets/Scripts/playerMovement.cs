@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    private Player player;
     public Rigidbody2D _rb2d;
     public PlayerFeet _feet;
 
@@ -9,6 +10,8 @@ public class playerMovement : MonoBehaviour
     private bool _isJumping;
     private float _maxTimeJump = 0.2f;
     private float _currentJumptime = 0;
+
+    public bool isLookingRight;
 
     public float _horizontal;
     public float _jumpForce;
@@ -19,6 +22,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<Player>();
         _rb2d = GetComponent<Rigidbody2D>();
         _rb2d.freezeRotation = true;
         _animator = GetComponent<Animator>();
@@ -34,13 +38,14 @@ public class playerMovement : MonoBehaviour
         {
             _animator.SetFloat("Speed", 0.5f);
             currentVelocity.x += _horizontal;
-            gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            isLookingRight = true;
         }
         else if (Input.GetKey(KeyCode.A))
         {
             _animator.SetFloat("Speed", 0.5f);
             currentVelocity.x -= _horizontal;
             gameObject.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            isLookingRight = false;
         }
         else
         {
@@ -73,6 +78,15 @@ public class playerMovement : MonoBehaviour
         {
             _currentJumptime = 0;
             _isJumping = false;
+        }
+
+        if (isLookingRight == true)
+        {
+            player.Flip(0f);
+        }
+        else
+        {
+            player.Flip(180f);
         }
     }
 
