@@ -41,12 +41,12 @@ public class introscript : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             currentVelocity.x += _horizontal;
-            isLookingRight = true;
+            transform.localScale = new Vector3(1f, 1f, 1f); // Rotation normale (pas de miroir)
         }
         if (Input.GetKey(KeyCode.A))
         {
             currentVelocity.x -= _horizontal;
-            isLookingRight = false;
+            transform.localScale = new Vector3(-1f, 1f, 1f); // Rotation normale (pas de miroir)
         }
         
         _rb2d.velocity = currentVelocity;

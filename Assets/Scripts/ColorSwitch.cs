@@ -14,6 +14,7 @@ public class ColorDetection : MonoBehaviour
 
     void ColorSwitch()
     {
+
         if (selectedColor == "blue")
         {
             foreach (GameObject obj in blueObjects)
@@ -90,6 +91,8 @@ public class ColorDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         KeyDetect();
         ColorSwitch();
 
