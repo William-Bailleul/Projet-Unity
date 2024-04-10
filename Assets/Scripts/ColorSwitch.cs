@@ -6,9 +6,9 @@ public class ColorDetection : MonoBehaviour
 {
 
     public string selectedColor = "none";
-    GameObject[] blueObjects;
-    GameObject[] greenObjects;
-    GameObject[] redObjects;
+    public GameObject[] blueObjects;
+    public GameObject[] greenObjects;
+    public GameObject[] redObjects;
 
 
 
@@ -69,13 +69,17 @@ public class ColorDetection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             selectedColor = "red";
+            
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
             selectedColor = "green";
+            
         }
-        if (Input.GetKeyDown(KeyCode.B)) {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
             selectedColor = "blue";
+           
         }
     }
 
@@ -91,10 +95,10 @@ public class ColorDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
+ 
         KeyDetect();
         ColorSwitch();
+        
 
     }
 }
