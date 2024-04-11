@@ -13,13 +13,12 @@ public class Dissolve : MonoBehaviour
 
     private void Start()
     {
-        ColorManager2.OnChangeColor += OnColorChange;
+        ColorManager.OnChangeColor += OnColorChange;
         _propertyBlock = new MaterialPropertyBlock();
     }
 
-    public void OnColorChange(ColorManager2.Colors newColor)
+    public void OnColorChange(ColorManager.Colors newColor)
     {
-
         if (this != null && gameObject != null && gameObject.activeSelf)
         {
             if (isVanished)
@@ -31,7 +30,6 @@ public class Dissolve : MonoBehaviour
                 StartCoroutine(Vanish());
             }
         }
-
     }
 
 
@@ -44,7 +42,7 @@ public class Dissolve : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             float lerpDissolve = Mathf.Lerp(0, 1.1f, (elapsedTime / _dissolveTime));
-            SetDissolveAmount(lerpDissolve, ColorManager2.GetPreviousColor());
+            SetDissolveAmount(lerpDissolve, ColorManager.PreviousColor);
 
             yield return null;
         }
@@ -59,13 +57,13 @@ public class Dissolve : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             float lerpDissolve = Mathf.Lerp(1.1f, 0f, (elapsedTime / _dissolveTime));
-            SetDissolveAmount(lerpDissolve, ColorManager2.GetActiveColor());
+            SetDissolveAmount(lerpDissolve, ColorManager.ActiveColor);
 
             yield return null;
         }
     }
 
-    public void SetDissolveAmount(float amount, ColorManager2.Colors color)
+    public void SetDissolveAmount(float amount, ColorManager.Colors color)
     {
         GameObject[] objectsToDissolve = GetObjectsWithColor(color);
         foreach (GameObject obj in objectsToDissolve)
@@ -79,13 +77,13 @@ public class Dissolve : MonoBehaviour
     }
 
 
-    private GameObject[] GetObjectsWithColor(ColorManager2.Colors color)
+    private GameObject[] GetObjectsWithColor(ColorManager.Colors color)
     {
-        ColorEvent2[] colorEvents = FindObjectsOfType<ColorEvent2>();
+        ColorEvent[] colorEvents = FindObjectsOfType<ColorEvent>();
 
         // Filtrer les objets par couleur
         List<GameObject> objectsWithColor = new List<GameObject>();
-        foreach (ColorEvent2 colorEvent in colorEvents)
+        foreach (ColorEvent colorEvent in colorEvents)
         {
             if (colorEvent.Color == color && colorEvent.gameObject.activeSelf)
             {

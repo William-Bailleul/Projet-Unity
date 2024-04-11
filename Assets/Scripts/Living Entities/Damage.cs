@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public static Damage instance;
-    public Player2 _player;
+    public Player _player;
     private bool _isInvincible = false;
     private Animator animator;
 

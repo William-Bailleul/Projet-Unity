@@ -9,11 +9,14 @@ public class ColorEvent : MonoBehaviour
     private bool _active = true;
     private Collider2D _collider;
     private SpriteRenderer _sprite;
+    private Dissolve _dissolve;
+    private ColorManager.Colors _previousColor;
 
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
         _sprite = GetComponent<SpriteRenderer>();
+        _dissolve = GetComponent<Dissolve>();
     }
 
     private void Start()
@@ -33,14 +36,39 @@ public class ColorEvent : MonoBehaviour
             if (Color == newColor) return;
             else
             {
-                Deactivate();
+                if(_dissolve != null)
+                {
+                    StartCoroutine(FadeOutAndDisable());
+                }
             }
-        } else
+        }
+        else
         {
             if (Color != newColor) return;
             Activate();
         }
-    }
+            //bool shouldBeActive = (Color == newColor);
+
+            //if (_dissolve != null && _dissolve.gameObject.activeSelf)
+            //{
+            //    _dissolve.OnColorChange(newColor);
+            //}
+
+            //if (shouldBeActive)
+            //{
+            //    Activate();
+            //}
+            //else
+            //{
+            //    if (_dissolve != null && Color == ColorManager.PreviousColor)
+            //    {
+            //        StartCoroutine(FadeOutAndDisable());
+            //    }
+            //}
+
+            //_previousColor = ColorManager.PreviousColor;
+
+        }
 
     private void Activate()
     {
@@ -54,5 +82,22 @@ public class ColorEvent : MonoBehaviour
         _active = false;
         _collider.enabled = false;
         _sprite.enabled = false;
+    }
+
+    private IEnumerator FadeOutAndDisable()
+    {
+        if (_dissolve != null)
+        {
+            yield return StartCoroutine(_dissolve.Vanish());
+        }
+        Deactivate();
+    }
+
+    private void onDestroy()
+    {
+        if (_dissolve != null)
+        {
+            Destroy(_dissolve.gameObject);
+        }
     }
 }

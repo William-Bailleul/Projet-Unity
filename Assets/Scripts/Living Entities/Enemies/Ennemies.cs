@@ -6,7 +6,7 @@ using UnityEngine;
 public class Ennemies : MonoBehaviour
 {
     private Animator _animator;
-    public Player2 _player;
+    public Player _player;
     public int _hp;
     private GameObject _attackArea = default;
     private float _attackRange = 2f;
