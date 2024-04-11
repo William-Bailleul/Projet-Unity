@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class introscript : MonoBehaviour
 {
     public Rigidbody2D _rb2d;
     public PlayerFeet _feet;
     public Transform myTransform;
+    public ColorDetection _colorDetection;
+    public SpriteRenderer _spriteRenderer;
 
     //Jump Parameter
     private bool _isJumping;
@@ -88,6 +91,19 @@ public class introscript : MonoBehaviour
         {
             currentJumptime = 0;
             _isJumping = false;
+        }
+
+        if (_colorDetection.selectedColor == "blue")
+        {
+            _spriteRenderer.color = new Color(0.4f, 1f, 1f);
+        }
+        if (_colorDetection.selectedColor == "red")
+        {
+            _spriteRenderer.color = new Color(1f, 0.3349057f, 0.3554974f);
+        }
+        if (_colorDetection.selectedColor == "green")
+        {
+            _spriteRenderer.color = new Color(1f, 1f, 0.4009434f);
         }
     }
 
