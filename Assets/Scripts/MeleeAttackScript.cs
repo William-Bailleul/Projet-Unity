@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class AttackScript : MonoBehaviour
+public class MeleeAttackScript : MonoBehaviour
 {
     introscript _player;
 
@@ -29,7 +29,7 @@ public class AttackScript : MonoBehaviour
     {
         if (!isAttacking)
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
                 Attack();
         }
 

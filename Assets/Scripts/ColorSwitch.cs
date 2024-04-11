@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ColorDetection : MonoBehaviour
 {
 
@@ -10,11 +9,8 @@ public class ColorDetection : MonoBehaviour
     public GameObject[] greenObjects;
     public GameObject[] redObjects;
 
-
-
     void ColorSwitch()
     {
-
         if (selectedColor == "blue")
         {
             foreach (GameObject obj in blueObjects)
@@ -95,10 +91,7 @@ public class ColorDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
         KeyDetect();
-        ColorSwitch();
-        
-
+        ColorSwitch();      
     }
 }
