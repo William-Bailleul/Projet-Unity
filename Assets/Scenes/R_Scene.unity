@@ -270,8 +270,8 @@ GameObject:
   - component: {fileID: 526436540}
   - component: {fileID: 526436539}
   - component: {fileID: 526436541}
-  - component: {fileID: 526436542}
   - component: {fileID: 526436543}
+  - component: {fileID: 526436544}
   m_Layer: 0
   m_Name: red
   m_TagString: Ground
@@ -391,19 +391,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &526436542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526436538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91aed070ba030bc4ab28190a458cf42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color: 1
 --- !u!114 &526436543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +404,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dissolveTime: 0.75
+--- !u!114 &526436544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526436538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946da198a133737459d6cfc05abc4105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 1
 --- !u!1 &631174257
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,8 +428,8 @@ GameObject:
   - component: {fileID: 631174259}
   - component: {fileID: 631174258}
   - component: {fileID: 631174260}
-  - component: {fileID: 631174261}
   - component: {fileID: 631174262}
+  - component: {fileID: 631174263}
   m_Layer: 0
   m_Name: blue
   m_TagString: Ground
@@ -549,19 +549,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &631174261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631174257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91aed070ba030bc4ab28190a458cf42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color: 2
 --- !u!114 &631174262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +562,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dissolveTime: 0.75
+--- !u!114 &631174263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631174257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946da198a133737459d6cfc05abc4105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 2
 --- !u!1 &632729146
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1258384909}
-  _hp: 0
+  _hp: 10
 --- !u!61 &632729153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   _rb2d: {fileID: 1258384904}
   _hp: 10
   _animator: {fileID: 1258384908}
-  _feet: {fileID: 0}
+  _feet: {fileID: 1664320419}
   _horizontal: 10
   _jumpForce: 35
   _isFrozen: 0
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colorOwned: 0
-  _feet: {fileID: 0}
+  _feet: {fileID: 1664320419}
   _player: {fileID: 1258384909}
 --- !u!114 &1258384911
 MonoBehaviour:
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1664320416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 897b9feeaa4989a49bccea7ccb764d96, type: 3}
+  m_Script: {fileID: 11500000, guid: 129d85283bd66de4f8c7315254e0becd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isGrounded: 0
@@ -1606,8 +1606,8 @@ GameObject:
   - component: {fileID: 1739110831}
   - component: {fileID: 1739110830}
   - component: {fileID: 1739110832}
-  - component: {fileID: 1739110833}
   - component: {fileID: 1739110834}
+  - component: {fileID: 1739110835}
   m_Layer: 0
   m_Name: yellow
   m_TagString: Ground
@@ -1727,19 +1727,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1739110833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739110829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91aed070ba030bc4ab28190a458cf42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color: 3
 --- !u!114 &1739110834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,6 +1740,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dissolveTime: 0.75
+--- !u!114 &1739110835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739110829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946da198a133737459d6cfc05abc4105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: 3
 --- !u!1 &1939820056
 GameObject:
   m_ObjectHideFlags: 0
