@@ -9,6 +9,7 @@ public class ColorManager : MonoBehaviour
     public delegate void ChangeColor(Colors newColor);
     public static event ChangeColor OnChangeColor;
     private bool _canChange;
+    private bool _firstColorUse;
     [SerializeField] private int _colorOwned;
 
     public PlayerFeet _feet;
@@ -18,7 +19,9 @@ public class ColorManager : MonoBehaviour
     void Start()
     {
         _canChange = true;
-        ActiveColor = Colors.None;
+        _firstColorUse = true;
+
+    ActiveColor = Colors.None;
         _colorOwned = 1;
     }
 
@@ -26,11 +29,15 @@ public class ColorManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && _feet._isGrounded)
         {
-            if (!_canChange) return;
+            if (!_canChange || _colorOwned == 0) return;
             Debug.Log($"{ActiveColor}");
             ActiveColor = (Colors)((int)ActiveColor % (_colorOwned)+1);
             Debug.Log($"{ActiveColor}");
-            StartCoroutine(ColorChanging());
+            if(_firstColorUse && _colorOwned == 1)
+            {
+                    StartCoroutine(ColorChanging());
+                    _firstColorUse = false;
+            }
             SwitchState();
         }
         if (Input.GetKeyDown(KeyCode.Q)) {

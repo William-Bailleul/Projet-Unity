@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public bool _isFrozen;
 
     //Coyote and Buffer
-    public static float _coyoteTime = .15f;
+    public static float _coyoteTime = .10f;
     private float _coyotTimeCounter;
     public static float _JumpBuffer = .2f;
     private float _bufferTimeCounter;
