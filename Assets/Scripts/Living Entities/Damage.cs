@@ -24,22 +24,37 @@ public class Damage : MonoBehaviour
         if (_isInvincible == false)
         {
             _isInvincible = true;
+            _player.getInstance.KnockBackValue = 15f;
             animator.SetBool("isHurted", true);
             _player._hp -= amount;
             StartCoroutine(Invincibility());
-            _player.Knock();
+            _player.getInstance.Knock();
         }
         else return;
     }
 
-    public void DamageEnemy(int amount)
+    public void DamageEnemy(GameObject enemy, int amount)
     {
-        //Ennemies._instance._hp -= amount;
+        if(enemy != null)
+        {
+            Ennemies target = enemy.GetComponent<Ennemies>();
+            if(target != null)
+            {
+                target._hp -= amount;
+            }
+            else
+            {
+                Debug.LogWarning("Enemy script not found on the GameObject" + enemy.name); // can bug
+            }
+        }
+        else
+        {
+            Debug.LogWarning("GameObject is null");
+        }
     }
 
     public IEnumerator Invincibility()
     {
-        print("je suis invincible");
         yield return new WaitForSeconds(1.5f);
         _isInvincible = false;
         animator.SetBool("isHurted", false);

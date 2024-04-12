@@ -16,6 +16,7 @@ public class ColorManager : MonoBehaviour
     public PlayerFeet _feet;
     public Player _player;
     private Dissolve _dissolve;
+    private Hue _hue;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class ColorManager : MonoBehaviour
         ActiveColor = Colors.None;
         _colorOwned = 1;
         _dissolve = FindObjectOfType<Dissolve>();
+        _hue = GetComponent<Hue>();
 
     }
 
@@ -38,14 +40,15 @@ public class ColorManager : MonoBehaviour
             Debug.Log($"{ActiveColor}");
             if(_firstColorUse && _colorOwned == 1)
             {
-                    _firstColorUse = false;
-                    SwitchState();
-                    StartCoroutine(ColorChanging());
+                _firstColorUse = false;
+                SwitchState();
+                StartCoroutine(ColorChanging());
+                _hue.ChangeHue(ActiveColor);
             }
             if (_colorOwned == 1) return;
             SwitchState();
             StartCoroutine(ColorChanging());
-
+            _hue.ChangeHue(ActiveColor);
 
         }
         if (Input.GetKeyDown(KeyCode.Q)) {
@@ -74,10 +77,10 @@ public class ColorManager : MonoBehaviour
     public IEnumerator ColorChanging()
     {
         _canChange = false;
-        _player._isFrozen = true;
+        _player.getInstance.IsFrozen = true;
         _player._rb.velocity.Set(0f, 0f);
         yield return new WaitForSeconds(0.5f);
-        _player._isFrozen = false;
+        _player.getInstance.IsFrozen = false;
         _canChange = true;
     }
 
