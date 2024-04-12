@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+
 
 public class Player : MonoBehaviour
 {
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour
     public int _hp;
     private bool _isDead = false;
 
-    private string _spawnPoint = "Spawn";
+    [SerializeField]private string _spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
         getInstance.PlayerAnimator = _animator;
         getInstance.PlayerGameObject = gameObject;
         getInstance.KnockBackValue = _knockBackValue;
-        getInstance.ChangePlayerSpawnpoint(GameObject.Find("Spawnpoint").transform.Find(_spawnPoint).gameObject);
+        getInstance.ChangePlayerSpawnpoint(GameObject.Find("SpawnPoint").transform.Find(_spawnPoint).gameObject);
         _rb.freezeRotation = true;
         Utils.UtilsRigidBody2D = _rb;
         Damage.instance.Animator = _animator;
@@ -54,6 +56,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Die());
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -71,11 +74,14 @@ public class Player : MonoBehaviour
     {
         _animator.SetTrigger("die");
         _isDead = true;
+        getInstance.IsFrozen = true;
+        _rb.velocity.Set(0f, 0f);
         yield return new WaitForSeconds(2f);
+        getInstance.IsFrozen = false;
         _hp = 10;
         _isDead = false;
         _animator.SetFloat("Speed", 0f);
-        getInstance.ChangePlayerSpawnpoint(GameObject.Find("Spawnpoint").transform.Find(_spawnPoint).gameObject);
+        getInstance.ChangePlayerSpawnpoint(GameObject.Find("SpawnPoint").transform.Find(_spawnPoint).gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

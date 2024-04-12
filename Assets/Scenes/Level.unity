@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &44866274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228,7 +227,7 @@ GameObject:
   - component: {fileID: 148878209}
   - component: {fileID: 148878208}
   - component: {fileID: 148878207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 148878205}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 141.26, y: -2.95, z: 0}
+  m_LocalPosition: {x: 144.11, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -283,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.17412567, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -294,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.2241974, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &148878208
 MonoBehaviour:
@@ -457,7 +456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &189874345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -647,7 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &221745711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -914,6 +911,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 486399796}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &281771827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281771828}
+  - component: {fileID: 281771829}
+  m_Layer: 8
+  m_Name: Spawn lvl1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &281771828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281771827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: -10.86, z: 0}
+  m_LocalScale: {x: 1, y: 26.46235, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1847655487}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &281771829
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281771827}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &311813217
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +1033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &311813220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1019,7 +1092,7 @@ GameObject:
   - component: {fileID: 324379806}
   - component: {fileID: 324379805}
   - component: {fileID: 324379804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1147,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.18786621, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1085,7 +1158,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1666565, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &324379805
 MonoBehaviour:
@@ -1475,7 +1548,8 @@ GameObject:
   - component: {fileID: 486399792}
   - component: {fileID: 486399790}
   - component: {fileID: 486399797}
-  m_Layer: 3
+  - component: {fileID: 486399798}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,6 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cb863052f042643b3e361f469aa2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerEvent: {fileID: 1366165408}
   _rb: {fileID: 486399794}
   _feet: {fileID: 250057786}
   _animator: {fileID: 486399792}
@@ -1501,8 +1576,9 @@ MonoBehaviour:
   _jumpForce: 35
   _isFrozen: 0
   _isLookingRight: 0
-  knockBackValue: 15
+  _knockBackValue: 15
   _hp: 10
+  _spawnPoint: Spawn lvl1
 --- !u!95 &486399792
 Animator:
   serializedVersion: 5
@@ -1616,7 +1692,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4649f715b2673a643a87e82ed6c7ec53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1657,11 +1733,12 @@ Transform:
   m_GameObject: {fileID: 486399789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: -1.3, z: 0}
+  m_LocalPosition: {x: -3.4000003, y: -3.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 250057788}
+  - {fileID: 602580040}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &486399797
@@ -1679,6 +1756,18 @@ MonoBehaviour:
   _colorOwned: 0
   _feet: {fileID: 250057786}
   _player: {fileID: 486399790}
+--- !u!114 &486399798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486399789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6d2bd3984f226419ac7ba0d3235857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505122882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,7 +1782,7 @@ GameObject:
   - component: {fileID: 505122886}
   - component: {fileID: 505122885}
   - component: {fileID: 505122884}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1748,7 +1837,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.19491577, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1759,7 +1848,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1611023, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &505122885
 MonoBehaviour:
@@ -2035,6 +2124,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dissolveTime: 0.45
+--- !u!1 &528370179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528370180}
+  m_Layer: 0
+  m_Name: Apagnan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528370180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528370179}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.001117, y: 6.34131, z: 0.009619696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1366165409}
+  - {fileID: 1213350282}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &542409126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &542409129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2140,7 +2261,7 @@ GameObject:
   - component: {fileID: 562143556}
   - component: {fileID: 562143555}
   - component: {fileID: 562143554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2195,7 +2316,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.16996002, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2206,7 +2327,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1823578, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &562143555
 MonoBehaviour:
@@ -2324,6 +2445,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &602580039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602580040}
+  - component: {fileID: 602580042}
+  - component: {fileID: 602580041}
+  m_Layer: 3
+  m_Name: AttackArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &602580040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602580039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 486399796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &602580041
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602580039}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &602580042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602580039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &603275909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,7 +2549,7 @@ GameObject:
   - component: {fileID: 603275912}
   - component: {fileID: 603275911}
   - component: {fileID: 603275910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2377,7 +2588,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.14898491, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2388,7 +2599,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1269417, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &603275911
 MonoBehaviour:
@@ -2536,7 +2747,7 @@ GameObject:
   - component: {fileID: 616204499}
   - component: {fileID: 616204498}
   - component: {fileID: 616204497}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2552,7 +2763,7 @@ Transform:
   m_GameObject: {fileID: 616204495}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 131.56999, y: -2.95, z: 0}
+  m_LocalPosition: {x: 134.42, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2591,7 +2802,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.17893982, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2602,7 +2813,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1833801, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &616204498
 MonoBehaviour:
@@ -2765,7 +2976,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &713162653
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2840,7 +3050,7 @@ Transform:
   m_GameObject: {fileID: 733265963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4, y: 1.7, z: -10}
+  m_LocalPosition: {x: -3.2, y: 1.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2976,7 +3186,7 @@ GameObject:
   - component: {fileID: 793798926}
   - component: {fileID: 793798925}
   - component: {fileID: 793798924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3031,7 +3241,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.1665802, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3042,7 +3252,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.2546387, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &793798925
 MonoBehaviour:
@@ -3205,7 +3415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &813832613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3364,7 +3573,7 @@ GameObject:
   - component: {fileID: 850777936}
   - component: {fileID: 850777935}
   - component: {fileID: 850777934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3380,7 +3589,7 @@ Transform:
   m_GameObject: {fileID: 850777932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 111.189995, y: -2.95, z: 0}
+  m_LocalPosition: {x: 114.04, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3419,7 +3628,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.16909027, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3430,7 +3639,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.0976562, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &850777935
 MonoBehaviour:
@@ -4166,7 +4375,7 @@ GameObject:
   - component: {fileID: 1163304801}
   - component: {fileID: 1163304800}
   - component: {fileID: 1163304799}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4182,7 +4391,7 @@ Transform:
   m_GameObject: {fileID: 1163304797}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 102.049995, y: -2.95, z: 0}
+  m_LocalPosition: {x: 104.9, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4221,7 +4430,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.20098495, y: -0.301991}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4232,7 +4441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1559067, y: 3.4513626}
   m_EdgeRadius: 0
 --- !u!114 &1163304800
 MonoBehaviour:
@@ -4395,7 +4604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &1165077022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4455,7 +4663,7 @@ GameObject:
   - component: {fileID: 1195954838}
   - component: {fileID: 1195954837}
   - component: {fileID: 1195954836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4471,7 +4679,7 @@ Transform:
   m_GameObject: {fileID: 1195954834}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.28, y: -2.95, z: 0}
+  m_LocalPosition: {x: 124.130005, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4510,7 +4718,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.12081909, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4521,7 +4729,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.129837, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &1195954837
 MonoBehaviour:
@@ -4677,12 +4885,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213350280}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.794044, y: -2.948339, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 71.79293, y: -9.289649, z: -0.009619696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 528370180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330595259
 GameObject:
@@ -117767,6 +117975,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1366165407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366165409}
+  - component: {fileID: 1366165408}
+  m_Layer: 0
+  m_Name: PlayerEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1366165408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366165407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e78f24d65639d4981697ebcc3c4178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1366165409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366165407}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528370180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439616157
 GameObject:
   m_ObjectHideFlags: 0
@@ -117812,7 +118064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &1439616160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118507,7 +118758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &1506651577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118780,7 +119030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617320222}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 83.01079, y: 2.3371465, z: -0.07777665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -118804,7 +119054,7 @@ GameObject:
   - component: {fileID: 1680862228}
   - component: {fileID: 1680862227}
   - component: {fileID: 1680862226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118859,7 +119109,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.1703949, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -118870,7 +119120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1346283, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &1680862227
 MonoBehaviour:
@@ -119014,7 +119264,7 @@ Transform:
   m_GameObject: {fileID: 1719211075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: -3.182}
+  m_LocalPosition: {x: -6.6000004, y: 2.2, z: -3.182}
   m_LocalScale: {x: 1.1591, y: 1.1591, z: 1.1591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -119310,7 +119560,7 @@ GameObject:
   - component: {fileID: 1775671384}
   - component: {fileID: 1775671383}
   - component: {fileID: 1775671382}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vicyan (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119365,7 +119615,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13663578, y: -0.06210661}
+  m_Offset: {x: 0.15985107, y: -0.06210661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -119376,7 +119626,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9022026, y: 3.9311314}
+  m_Size: {x: 2.1697083, y: 3.9311314}
   m_EdgeRadius: 0
 --- !u!114 &1775671383
 MonoBehaviour:
@@ -119539,7 +119789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &1837854076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119584,6 +119833,116 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.9688673, y: 3.832075}
+  m_EdgeRadius: 0
+--- !u!1 &1847655486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847655487}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1847655487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847655486}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.001117, y: 6.34131, z: 0.009619696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 281771828}
+  - {fileID: 1849780337}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1849780336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849780337}
+  - component: {fileID: 1849780338}
+  m_Layer: 8
+  m_Name: Spawn lvl2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1849780337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849780336}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 82.7, y: -3.87, z: 0}
+  m_LocalScale: {x: 1, y: 26.46235, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1847655487}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1849780338
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849780336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1937049730
 GameObject:
@@ -119630,7 +119989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381e642958b12f5428d7a10a1858d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
 --- !u!61 &1937049733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120341,10 +120699,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 733265964}
+  - {fileID: 1719211076}
   - {fileID: 486399796}
+  - {fileID: 1617320223}
   - {fileID: 1967376053}
   - {fileID: 1573788412}
   - {fileID: 1940217458}
-  - {fileID: 1617320223}
-  - {fileID: 1213350282}
-  - {fileID: 1719211076}
+  - {fileID: 1847655487}
+  - {fileID: 528370180}

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerEvent : MonoBehaviour
 {
@@ -54,7 +55,12 @@ public class PlayerEvent : MonoBehaviour
 
     public void MoveEvents(float dT)
     {
-        if(_currentKnockBack > 0.1)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if (_currentKnockBack > 0.1)
         {
             _currentKnockBack -= dT * 12;
         }
