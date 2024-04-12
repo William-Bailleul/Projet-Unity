@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
 
     //Player Stats
     public int _hp;
+    private bool _isDead = false;
+
+    private string _spawnPoint = "Spawn";
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour
         getInstance.PlayerAnimator = _animator;
         getInstance.PlayerGameObject = gameObject;
         getInstance.KnockBackValue = _knockBackValue;
+        getInstance.ChangePlayerSpawnpoint(GameObject.Find("Spawnpoint").transform.Find(_spawnPoint).gameObject);
         _rb.freezeRotation = true;
         Utils.UtilsRigidBody2D = _rb;
         Damage.instance.Animator = _animator;
@@ -45,6 +49,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         getInstance.MoveEvents(Time.deltaTime);
+
+        if(_hp <= 0 && _isDead == false)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -58,4 +67,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    private IEnumerator Die()
+    {
+        _animator.SetTrigger("die");
+        _isDead = true;
+        yield return new WaitForSeconds(2f);
+        _hp = 10;
+        _isDead = false;
+        _animator.SetFloat("Speed", 0f);
+        getInstance.ChangePlayerSpawnpoint(GameObject.Find("Spawnpoint").transform.Find(_spawnPoint).gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            _spawnPoint = collision.gameObject.name;
+        }
+        else return;
+    }
 }

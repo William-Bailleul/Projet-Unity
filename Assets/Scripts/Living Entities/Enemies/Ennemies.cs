@@ -7,6 +7,7 @@ public class Ennemies : MonoBehaviour
 {
     private Animator _animator;
     public Player _player;
+    private BoxCollider2D _collider;
     public int _hp;
     private float _attackRange = 2f;
     private float _attackAngle = 30f;
@@ -18,9 +19,11 @@ public class Ennemies : MonoBehaviour
     private bool _isPlayerInFront = false;
     private bool _isAttacking = false;
     private bool _walk;
+    private bool _isDead = false;
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _collider = GetComponent<BoxCollider2D>();
         _playerLayer = LayerMask.GetMask("Player");
         _startPos = transform.position.x;
         _endPos = _startPos + 10f;
@@ -76,9 +79,9 @@ public class Ennemies : MonoBehaviour
             }
         }
 
-        if(_hp <= 0)
+        if(_hp <= 0 && _isDead == false)
         {
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
     }
 
@@ -91,6 +94,16 @@ public class Ennemies : MonoBehaviour
         _isAttacking = false;
     }
 
+    private IEnumerator Die()
+    {
+        _animator.SetTrigger("die");
+        _isDead = true;
+        _walk = false;
+        _isAttacking = false;
+        _collider.enabled = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
     private void Walk(bool value)
     {
         if (value == true)
@@ -107,4 +120,5 @@ public class Ennemies : MonoBehaviour
             Damage.instance.DamagePlayer(1);
         }
     }
+
 }

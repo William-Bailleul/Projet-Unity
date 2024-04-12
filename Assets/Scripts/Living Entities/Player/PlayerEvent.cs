@@ -148,4 +148,9 @@ public class PlayerEvent : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         _isAttacking = false;
     }
+
+    public void ChangePlayerSpawnpoint(GameObject gameObject)
+    {
+        _rb.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+    }
 }
