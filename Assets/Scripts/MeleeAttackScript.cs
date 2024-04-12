@@ -12,7 +12,7 @@ public class MeleeAttackScript : MonoBehaviour
     public LayerMask enemies;
     public float attackRange;
 
-    private bool isAttacking = false;
+    public bool isAttacking = false;
     public float attackTime;
     public float attackCooldown;
     private float attackTimer = 0f;
