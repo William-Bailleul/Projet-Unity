@@ -12,10 +12,11 @@ public class Ennemies : MonoBehaviour
     private float _attackRange = 2f;
     private float _attackAngle = 30f;
     private LayerMask _playerLayer;
+    [SerializeField]private float patroll;
     private float _startPos;
     private float _endPos;
     private float _speed = 5f;
-    private bool _movingForward = true;
+    [SerializeField]private bool _movingForward;
     private bool _isPlayerInFront = false;
     private bool _isAttacking = false;
     private bool _walk;
@@ -25,7 +26,7 @@ public class Ennemies : MonoBehaviour
         _attackArea = transform.GetChild(0).gameObject;
         _playerLayer = LayerMask.GetMask("Player");
         _startPos = transform.position.x;
-        _endPos = _startPos + 10f;
+        _endPos = _startPos + patroll;
         _walk = true;
     }
     void FixedUpdate()

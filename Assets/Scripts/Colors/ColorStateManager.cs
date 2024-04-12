@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ColorManager : MonoBehaviour
@@ -22,7 +23,6 @@ public class ColorManager : MonoBehaviour
         _canChange = true;
         _firstColorUse = true;
         ActiveColor = Colors.None;
-        _colorOwned = 1;
         _dissolve = FindObjectOfType<Dissolve>();
 
     }
@@ -38,9 +38,9 @@ public class ColorManager : MonoBehaviour
             Debug.Log($"{ActiveColor}");
             if(_firstColorUse && _colorOwned == 1)
             {
-                    _firstColorUse = false;
-                    SwitchState();
-                    StartCoroutine(ColorChanging());
+                _firstColorUse = false;
+                SwitchState();
+                StartCoroutine(ColorChanging());
             }
             if (_colorOwned == 1) return;
             SwitchState();
@@ -79,6 +79,16 @@ public class ColorManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         _player._isFrozen = false;
         _canChange = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Red Brush" || collision.gameObject.tag == "Blue Brush" || collision.gameObject.tag == "Yellow Brush")
+        {
+            Destroy(collision.gameObject);
+            _colorOwned++;
+            StartCoroutine(ColorChanging());
+        }
     }
 
     void OnColorChange(Colors newColor)

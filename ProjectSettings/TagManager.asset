@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Red Brush
+  - Blue Brush
+  - Yellow Brush
   layers:
   - Default
   - TransparentFX

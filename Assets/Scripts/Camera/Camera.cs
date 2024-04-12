@@ -11,7 +11,7 @@ public class Camera : MonoBehaviour
     void Update()
     {
         Vector3 playerPos = player.position;
-        playerPos.y += 4f;
+        playerPos.y += 3f;
         playerPos.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smooth);
     }
