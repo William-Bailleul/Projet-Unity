@@ -47,28 +47,8 @@ public class ColorEvent : MonoBehaviour
             if (Color != newColor) return;
             Activate();
         }
-            //bool shouldBeActive = (Color == newColor);
 
-            //if (_dissolve != null && _dissolve.gameObject.activeSelf)
-            //{
-            //    _dissolve.OnColorChange(newColor);
-            //}
-
-            //if (shouldBeActive)
-            //{
-            //    Activate();
-            //}
-            //else
-            //{
-            //    if (_dissolve != null && Color == ColorManager.PreviousColor)
-            //    {
-            //        StartCoroutine(FadeOutAndDisable());
-            //    }
-            //}
-
-            //_previousColor = ColorManager.PreviousColor;
-
-        }
+    }
 
     private void Activate()
     {

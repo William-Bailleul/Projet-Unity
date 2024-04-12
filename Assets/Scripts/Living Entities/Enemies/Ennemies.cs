@@ -7,8 +7,8 @@ public class Ennemies : MonoBehaviour
 {
     private Animator _animator;
     public Player _player;
+    private BoxCollider2D _collider;
     public int _hp;
-    private GameObject _attackArea = default;
     private float _attackRange = 2f;
     private float _attackAngle = 30f;
     private LayerMask _playerLayer;
@@ -20,10 +20,11 @@ public class Ennemies : MonoBehaviour
     private bool _isPlayerInFront = false;
     private bool _isAttacking = false;
     private bool _walk;
+    private bool _isDead = false;
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _attackArea = transform.GetChild(0).gameObject;
+        _collider = GetComponent<BoxCollider2D>();
         _playerLayer = LayerMask.GetMask("Player");
         _startPos = transform.position.x;
         _endPos = _startPos + patroll;
@@ -31,7 +32,11 @@ public class Ennemies : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Walk(_walk);
+        if(_isAttacking == false)
+        {
+            Walk(_walk);
+        } 
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
 
         foreach (Collider2D collider in colliders)
@@ -43,12 +48,13 @@ public class Ennemies : MonoBehaviour
                 _isPlayerInFront = true;
                 break;
             }
+            else _isPlayerInFront = false;
         }
 
         if(colliders.Length > 0 && _isPlayerInFront && _isAttacking == false)
         {
             _walk = false;
-            _player.Side = _movingForward ? 1f : -1f;
+            _player.getInstance.PlayerLookingSide = _movingForward ? 1 : -1;
             Walk(_walk);
             StartCoroutine(PlayAttack());
         }
@@ -74,9 +80,9 @@ public class Ennemies : MonoBehaviour
             }
         }
 
-        if(_hp <= 0)
+        if(_hp <= 0 && _isDead == false)
         {
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
     }
 
@@ -84,11 +90,21 @@ public class Ennemies : MonoBehaviour
     {
         _isAttacking = true;
         _animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         _walk = true;
         _isAttacking = false;
     }
 
+    private IEnumerator Die()
+    {
+        _animator.SetTrigger("die");
+        _isDead = true;
+        _walk = false;
+        _isAttacking = false;
+        _collider.enabled = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
     private void Walk(bool value)
     {
         if (value == true)
@@ -105,4 +121,5 @@ public class Ennemies : MonoBehaviour
             Damage.instance.DamagePlayer(1);
         }
     }
+
 }
