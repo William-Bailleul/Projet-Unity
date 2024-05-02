@@ -8,6 +8,7 @@ TagManager:
   - Red Brush
   - Blue Brush
   - Yellow Brush
+  - Water
   layers:
   - Default
   - TransparentFX

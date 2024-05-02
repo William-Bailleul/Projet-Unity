@@ -69,11 +69,14 @@
     <Compile Include="Assets\Scripts\Colors\ColorEvent.cs" />
     <Compile Include="Assets\Scripts\Parallax\ParallaxController.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Utils.cs" />
+    <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Player\PlayerEvent.cs" />
+    <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Shaders\Dissolve.cs" />
     <Compile Include="Assets\Scripts\Shaders\Hue.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Enemies\AttackArea.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Player\PlayerFeet.cs" />
+    <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>

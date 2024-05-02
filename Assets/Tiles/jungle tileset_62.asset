@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: jungle tileset_62
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1403945115, guid: 5bebc77b4433d2e41be10baf063a8dfb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.17130609, g: 0.043387324, b: 0.6132076, a: 1}
   m_Transform:
     e00: 1
     e01: 0

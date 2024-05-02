@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
 
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
@@ -90,6 +91,9 @@ public class Player : MonoBehaviour
         {
             _spawnPoint = collision.gameObject.name;
         }
-        else return;
+        if (collision.gameObject.layer == 4)
+        {
+            StartCoroutine(Die());
+        }
     }
 }

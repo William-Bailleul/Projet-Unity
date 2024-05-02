@@ -15,6 +15,8 @@ public class PlayerEvent : MonoBehaviour
     private PlayerFeet _feet;
     private Animator _animator;
     private GameObject _gameObject;
+    [SerializeField] private PauseMenu _pauseMenu;
+    [SerializeField] private float _buildupSpeed;
 
     public Rigidbody2D PlayerRigidBody { get => _rb; set => _rb = value; }
     public PlayerFeet PlayerFeet { get => _feet; set => _feet = value; }
@@ -32,6 +34,7 @@ public class PlayerEvent : MonoBehaviour
     public float HorizontalForce { get => _horizontal; set => _horizontal = value; }
     public float JumpForce { get => _jumpForce; set => _jumpForce = value; }
     public bool IsFrozen { get => _isFrozen; set => _isFrozen = value; }
+    public bool IsPaused { get => _isFrozen; set => _isFrozen = value; }
     public bool IsLookingRight { get => _isLookingRight; set => _isLookingRight = value; }
 
     // Knockback values
@@ -51,38 +54,34 @@ public class PlayerEvent : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        IsPaused = false;
     }
 
     public void MoveEvents(float dT)
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            _pauseMenu.PauseGame();
         }
 
-        if (_currentKnockBack > 0.1)
-        {
-            _currentKnockBack -= dT * 12;
-        }
-
-        Vector2 currentVelocity = new Vector2(_currentKnockBack * _checkSide, _rb.velocity.y);
+        float dirX = 0;
 
         if(_isFrozen == false)
         {
             if(Input.GetKey(KeyCode.D))
             {
                 _animator.SetFloat("Speed", Mathf.Abs(_rb.velocity.x));
-                currentVelocity.x += _horizontal;
+                dirX += 1;
                 _isLookingRight = true;
             }
             if(Input.GetKey(KeyCode.A))
             {
                 _animator.SetFloat("Speed", Mathf.Abs(_rb.velocity.x));
-                currentVelocity.x -= _horizontal;
+                dirX -= 1;
                 _isLookingRight = false;
             }
+            _rb.velocity = new Vector2(_horizontal * dirX, _rb.velocity.y);
         }
-        _rb.velocity = currentVelocity;
 
         if(Input.GetKeyDown(KeyCode.Mouse0) && _isAttacking == false)
         {
@@ -141,10 +140,14 @@ public class PlayerEvent : MonoBehaviour
         _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
     }
 
-    public void Knock()
+    public IEnumerator Knock()
     {
-        _rb.AddForce(new Vector2(_knockBackValue, 25f), ForceMode2D.Impulse);
-        _currentKnockBack = _knockBackValue;
+        _isFrozen = true;
+        _rb.AddForce(new Vector2(_knockBackValue * _checkSide, 25f), ForceMode2D.Impulse);
+        if (_rb.velocity.y > 25f)
+            _rb.velocity = new Vector2(_rb.velocity.x, 25f);
+        yield return new WaitForSeconds(0.2f);
+        _isFrozen = false;
     }
 
     private IEnumerator PlayAttack()
@@ -159,4 +162,10 @@ public class PlayerEvent : MonoBehaviour
     {
         _rb.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
 }

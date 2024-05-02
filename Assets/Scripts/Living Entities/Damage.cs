@@ -28,7 +28,7 @@ public class Damage : MonoBehaviour
             animator.SetBool("isHurted", true);
             _player._hp -= amount;
             StartCoroutine(Invincibility());
-            _player.getInstance.Knock();
+            StartCoroutine(_player.getInstance.Knock());
         }
         else return;
     }
