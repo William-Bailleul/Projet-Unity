@@ -15,7 +15,7 @@ public class PlayerEvent : MonoBehaviour
     private PlayerFeet _feet;
     private Animator _animator;
     private GameObject _gameObject;
-    [SerializeField] private PauseMenu _pauseMenu;
+    [SerializeField] private MenuManager _pauseMenu;
     [SerializeField] private float _buildupSpeed;
 
     public Rigidbody2D PlayerRigidBody { get => _rb; set => _rb = value; }
@@ -161,11 +161,6 @@ public class PlayerEvent : MonoBehaviour
     public void ChangePlayerSpawnpoint(GameObject gameObject)
     {
         _rb.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-    }
-
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
     }
 
 }

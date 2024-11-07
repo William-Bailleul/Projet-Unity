@@ -2098,10 +2098,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746427504}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1030731146}
+        m_TargetAssemblyTypeName: AudioHandler, Assembly-CSharp
         m_MethodName: SetMasterVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2736,6 +2736,7 @@ GameObject:
   - component: {fileID: 1030731142}
   - component: {fileID: 1030731141}
   - component: {fileID: 1030731145}
+  - component: {fileID: 1030731146}
   m_Layer: 5
   m_Name: Canvapagnan
   m_TagString: Untagged
@@ -2841,6 +2842,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c54d5de21ac50f48b8fc3420eb69e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1030731146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030731140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c8312fbbd626942ab50013eb46a301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterSlider: {fileID: 807830768}
+  _musicSlider: {fileID: 1467207560}
+  _SFXSlider: {fileID: 1125136522}
 --- !u!1 &1031223074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,10 +3082,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746427504}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1030731146}
+        m_TargetAssemblyTypeName: AudioHandler, Assembly-CSharp
         m_MethodName: SetSFXVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3683,10 +3699,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746427504}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1030731146}
+        m_TargetAssemblyTypeName: AudioHandler, Assembly-CSharp
         m_MethodName: SetMusicVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4154,10 +4170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d3c6a5f026f2f4dac305c7350160be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioMixer: {fileID: 24100000, guid: db557fa260af9894a98fbb77e083f4b6, type: 2}
-  _masterSlider: {fileID: 807830768}
-  _musicSlider: {fileID: 1467207560}
-  _SFXSlider: {fileID: 1125136522}
   musicSounds:
   - Name: Theme
     AudioClip: {fileID: 8300000, guid: 7fbfc770fa401d24788855f04906afab, type: 3}
@@ -4167,6 +4179,10 @@ MonoBehaviour:
   masterSource: {fileID: 1516451558}
   musicSource: {fileID: 1988855538}
   sfxSource: {fileID: 538348962}
+  _audioMixer: {fileID: 24100000, guid: db557fa260af9894a98fbb77e083f4b6, type: 2}
+  _defaultMasterVolume: 0.5
+  _defaultMusicVolume: 0.5
+  _defaultSFXVolume: 0.5
 --- !u!1 &1778404648
 GameObject:
   m_ObjectHideFlags: 0

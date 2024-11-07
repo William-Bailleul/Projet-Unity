@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Camera\Camera.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Enemies\Ennemies.cs" />
     <Compile Include="Assets\Scripts\Parallax\Parallax.cs" />
+    <Compile Include="Assets\Scripts\Menus\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Damage.cs" />
     <Compile Include="Assets\Scripts\Colors\ColorStateManager.cs" />
     <Compile Include="Assets\Scripts\Menus\StartMenu.cs" />
@@ -76,8 +77,8 @@
     <Compile Include="Assets\Scripts\Shaders\Hue.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Enemies\AttackArea.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Player\PlayerFeet.cs" />
-    <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Living Entities\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Sound\AudioHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

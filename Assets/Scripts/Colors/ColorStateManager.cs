@@ -44,7 +44,6 @@ public class ColorManager : MonoBehaviour
                 SwitchState();
                 StartCoroutine(ColorChanging());
                 _hue.ChangeHue(ActiveColor);
-
             }
             if (_colorOwned == 1) return;
             SwitchState();
@@ -52,13 +51,12 @@ public class ColorManager : MonoBehaviour
             _hue.ChangeHue(ActiveColor);
 
         }
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            _colorOwned++;
-            if (_colorOwned > 3)
-                _colorOwned = Enum.GetValues(typeof(Colors)).Length-1;
-            Debug.Log(_colorOwned);
-        }
-
+        //if (Input.GetKeyDown(KeyCode.Q)) {
+        //    _colorOwned++;
+        //    if (_colorOwned > 3)
+        //        _colorOwned = Enum.GetValues(typeof(Colors)).Length-1;
+        //    Debug.Log(_colorOwned);
+        //}
     }
 
     public void SwitchState()
@@ -79,7 +77,7 @@ public class ColorManager : MonoBehaviour
     {
         _canChange = false;
         _player.getInstance.IsFrozen = true;
-        _player._rb.velocity.Set(0f, 0f);
+        _player._rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.5f);
         _player.getInstance.IsFrozen = false;
         _canChange = true;
